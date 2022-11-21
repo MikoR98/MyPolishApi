@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\mikol\Desktop\nowe 16.10\MyPolishApi\MyPolishApi\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2021-10-16T10:18:41.9683910Z;False|2021-10-16T12:16:24.4498428+02:00;False|2021-10-16T12:14:46.6969590+02:00;False|2021-10-16T12:12:56.2333907+02:00;True|2021-10-14T00:32:09.2925464+02:00;True|2021-10-14T00:30:17.6448519+02:00;True|2021-10-09T00:49:26.4706068+02:00;True|2021-10-08T22:58:01.5698910+02:00;False|2021-10-08T22:56:59.4294771+02:00;False|2021-10-08T22:44:59.7573630+02:00;True|2021-10-08T22:41:51.6718332+02:00;</History>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="myLocalDb">
+      <Value>Server=localhost%3bDatabase=MyPolishApi%3bTrusted_Connection=True%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="MyPolishApi.Entity.MyPolishApiDbContext">
+      <Value>Server=localhost\SQLEXPRESS%3bDatabase=MyPolishApi%3bTrusted_Connection=True%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

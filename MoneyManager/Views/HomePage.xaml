@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="MoneyManager.Views.HomePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="860"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="Foreground" Value="Purple"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Width="150" Height="150" Margin="0,20,0,0">
+            <Ellipse Fill="OrangeRed"/>
+            <Image Source="/Images/wallet.png" Width="50" Height="50" Margin="0,35,0,0" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Margin="0,80,0,0" FontSize="24" Foreground="White">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat=" {0} PLN">
+                        <Binding Path="AccountBalance"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1" Height="100" Width="250" Margin="0,50,0,0" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Separator Grid.Row="0" Grid.ColumnSpan="2" />
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Saldo dostępne:" FontWeight="DemiBold"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding AccountBalance}"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Saldo bieżące:" FontWeight="DemiBold"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding CurrentBalance}"/>
+            <Separator Grid.Row="3" Grid.ColumnSpan="2" Margin="0,15,0,0"/>
+        </Grid>
+
+        <TextBlock Grid.Row="3"  Grid.Column="0" Text="Moja nazwa konta:" FontWeight="DemiBold" Margin="100,0,0,0"/>
+        <TextBlock Grid.Row="3"  Grid.Column="1" Text="{Binding MyAccountName}"/>
+
+        <TextBlock Grid.Row="4"  Grid.Column="0" Text="Nazwa konta:" FontWeight="DemiBold" Margin="100,0,0,0"/>
+        <TextBlock Grid.Row="4"  Grid.Column="1" Text="{Binding AccountName}"/>
+
+        <TextBlock Grid.Row="5"  Grid.Column="0" Text="Numer konta:" FontWeight="DemiBold" Margin="100,0,0,0"/>
+        <TextBlock Grid.Row="5"  Grid.Column="1" Text="{Binding AccountNumber}"/>
+
+        <TextBlock Grid.Row="6"  Grid.Column="0" Text="IBAN:" FontWeight="DemiBold" Margin="100,0,0,0"/>
+        <TextBlock Grid.Row="6"  Grid.Column="1" Text="{Binding IBAN}"/>
+
+        <TextBlock Grid.Row="7"  Grid.Column="0" Text="Kod BIC SWIFT:" FontWeight="DemiBold" Margin="100,0,0,0"/>
+        <TextBlock Grid.Row="7"  Grid.Column="1" Text="{Binding BicSwift}"/>
+
+        <TextBlock Grid.Row="8"  Grid.Column="0" Text="Osoby upoważnione:" FontWeight="DemiBold" Margin="100,0,0,0"/>
+        <TextBlock Grid.Row="8"  Grid.Column="1" Text="{Binding AuthorizedPersons}"/>
+    </Grid>
+</UserControl>
